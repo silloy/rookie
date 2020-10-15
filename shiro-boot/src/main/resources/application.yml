@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    hikari:
+      driver-class-name:  com.mysql.cj.jdbc.Driver
+      connection-timeout: 3000
+      max-lifetime: 180000
+      maximum-pool-size: 20
+      idle-timeout: 600000
+      pool-name: geek-icem-wechat
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/rookie?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+    username: root
+    password: MySQL
+#  session:
+#    store-type: redis
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        format_sql: true
+        hbm2ddl:
+          auto: update
+
+
+#配置Shiro
+shiro:
+  loginUrl: /login
+  successUrl: /index
+  unauthorizedUrl: /unauthorized
+  userNativeSessionManager: true
+  rememberMeManager.cookie.maxAge: 259200
+  sessionManager:
+    cookie.maxAge: 10800
+#    sessionIdCookieEnabled: true
+#    sessionIdUrlRewritingEnabled: true
+#  web:
+#    enabled: true
+  enabled: true
+
+#  shiro.sessionManager.sessionIdCookieEnabled=true
+#  shiro.sessionManager.sessionIdUrlRewritingEnabled=true
+#  shiro.unauthorizedUrl=/unauthorizedurl
+#  shiro.web.enabled=true
+#  shiro.successUrl=/index
+#  shiro.loginUrl=/login
