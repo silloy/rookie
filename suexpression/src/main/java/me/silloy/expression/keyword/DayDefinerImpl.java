@@ -1,14 +1,15 @@
-package com.yuanqisenlin.metric.grid.standard.query.expression.keyword;
+package me.silloy.expression.keyword;
 
 
-import com.yuanqisenlin.metric.grid.standard.query.expression.SysCustomKeywordAstHandler;
-import com.yuanqisenlin.metric.grid.standard.query.expression.TargetDialectTypeEnum;
-import com.yuanqisenlin.metric.grid.standard.query.expression.TokenDescriptor;
+
+import me.silloy.expression.SysCustomKeywordAstHandler;
+import me.silloy.expression.TargetDialectTypeEnum;
+import me.silloy.expression.TokenDescriptor;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import static com.yuanqisenlin.metric.grid.service.CalculationServiceV2.DAY_FORMATTER;
 
 /**
  * 功能描述: day 关键词定义
@@ -50,7 +51,7 @@ public class DayDefinerImpl implements SysKeywordDefiner {
                     }
                 }
                 return "'"
-                        + LocalDate.now().plusDays(dayAmount).format(DAY_FORMATTER) + "'" + separator;
+                        + LocalDate.now().plusDays(dayAmount).format(DateTimeFormatter.ofPattern("yyyyMMdd")) + "'" + separator;
             case RAW:
             default:
                 StringBuilder sb = new StringBuilder();

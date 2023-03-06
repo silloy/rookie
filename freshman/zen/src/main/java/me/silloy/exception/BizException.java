@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
  */
 
 @Data
-@NoArgsConstructor
 public class BizException extends RuntimeException{
     protected int errCode;
     protected String errMessage;

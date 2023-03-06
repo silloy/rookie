@@ -12,7 +12,7 @@
 
     <parent>
         <groupId>me.silloy</groupId>
-        <artifactId>spring-boot-2</artifactId>
+        <artifactId>freshman</artifactId>
         <version>1.0</version>
     </parent>
 

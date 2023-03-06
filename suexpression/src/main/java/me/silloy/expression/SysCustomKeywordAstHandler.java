@@ -1,9 +1,10 @@
-package com.yuanqisenlin.metric.grid.standard.query.expression;
+package me.silloy.expression;
 
-import com.yuanqisenlin.metric.grid.standard.query.expression.keyword.Keyword;
-import com.yuanqisenlin.metric.grid.standard.query.expression.keyword.SysKeywordDefiner;
-import com.yuanqisenlin.metric.grid.util.ClassLoaderUtils;
+
 import lombok.extern.slf4j.Slf4j;
+import me.silloy.expression.keyword.Keyword;
+import me.silloy.expression.keyword.SysKeywordDefiner;
+import me.silloy.expression.utils.ClassLoaderUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class SysCustomKeywordAstHandler
             String currentPackage = SysCustomKeywordAstHandler.class.getPackage().getName();
             ClassLoaderUtils.loadPackageClasses(currentPackage, Keyword.class);
         } catch (Throwable e) {
-            log.error("加载包路径下文件失败", e);
+//            log.error("加载包路径下文件失败", e);
         }
     }
 
@@ -49,7 +50,7 @@ public class SysCustomKeywordAstHandler
         if (definer == null) {
             // throw new BizException("不支持的关键字: " + keywordName);
             // 在未完全替换所有关键字功能之前，不得抛出以上异常
-            log.warn("系统关键字[{}]定义未找到,降级使用原始语句,请尽快补充功能.", keywordName);
+//            log.warn("系统关键字[{}]定义未找到,降级使用原始语句,请尽快补充功能.", keywordName);
             return translateToDefaultRaw(mergedToken);
         }
         return definer.translate(mergedToken, targetSqlType);

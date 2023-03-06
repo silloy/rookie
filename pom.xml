@@ -13,7 +13,6 @@
         <module>flink-demo</module>
         <module>websocket-netty-start</module>
         <module>websocket-spring-boot</module>
-        <module>websocket-spring-reactive</module>
         <module>aviator-demo</module>
         <module>freshman</module>
 
@@ -26,8 +25,16 @@
         <module>websocket-socketio-spring</module>
         <module>websocket-spring-reactive</module>
         <module>websocket-stomp-netty</module>
+        <module>log4j2-bug</module>
+        <module>yqsl-rookie</module>
+        <module>suexpression</module>
     </modules>
 
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
 
 </project>

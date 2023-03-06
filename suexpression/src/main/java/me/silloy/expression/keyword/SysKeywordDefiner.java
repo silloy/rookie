@@ -1,7 +1,8 @@
-package com.yuanqisenlin.metric.grid.standard.query.expression.keyword;
+package me.silloy.expression.keyword;
 
-import com.yuanqisenlin.metric.grid.standard.query.expression.TargetDialectTypeEnum;
-import com.yuanqisenlin.metric.grid.standard.query.expression.TokenDescriptor;
+
+import me.silloy.expression.TargetDialectTypeEnum;
+import me.silloy.expression.TokenDescriptor;
 
 import java.util.List;
 

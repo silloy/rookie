@@ -1,6 +1,5 @@
 package me.silloy.study.websocket.socketio.spring.entity;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import java.util.Date;
@@ -12,7 +11,6 @@ import java.util.Date;
 @Data
 public class ClientInfo {
 
-    @NotNull
     private String clientid;
     private Short connected;
     private Long mostsignbits;
